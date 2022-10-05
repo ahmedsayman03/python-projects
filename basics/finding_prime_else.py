@@ -1,15 +1,10 @@
-# example of using else with a for or while loop
-def finding_prime():
-    '''
-    Prints prime numbers (or not) until and including 9, starting from 2
+def finding_prime_for():
+    """Prints if first 10 nums are prime nums or not. A prime is a num not a product of two smaller nums.
 
-    if it is not prime, print the products
-    
-    prime number: a number that is not a product of two (smaller) numbers,
-    starting from 2
-    
-    Uses an else clause in a for / while loop example
+    If it is not a prime num, prints the products.
+    Uses an else clause in a for loop.
 
+    e.g.
     2 is prime
     3 is prime
     4 is 2 * 2
@@ -18,43 +13,50 @@ def finding_prime():
     7 is prime
     8 is 2 * 4
     9 is 3 * 3
-    '''
-    for i in range(2, 10):
-        for dividing_num in range(2, i):
-            if i % dividing_num == 0:
-                # no remainder
-                # meaning i can get divided properly
+    """
 
-                #print(i, 'is not prime')
-                #print(dividing_num, 'divides it nicely')
-
-                print(i, 'equals', dividing_num, '*', i // dividing_num)
+    for num in range(2, 10):
+        for div in range(2, num):
+            if num % div is 0:
+                print(num, 'is', div, '*', num//div)
+                #  Break out of innermost loop
                 break
 
-        # executes if for loop does not break
+        #  If there is no break
         else:
-            print(i, 'is prime')
+            print(num, 'is prime')
 
 
 def finding_prime_while():
-    '''
-    Same as above, except uses a while loop
-    '''
-    i = 2
-    dividing_num = 2
-    
-    while (i<10):
-        while(dividing_num < i):
-            if (i % dividing_num == 0):
-                print(i, 'is not prime')
-                dividing_num = 2
+    """Prints if first 10 nums are prime or not. (A num that is a product of two smaller nums)
+
+    Prints products of num if num is not prime.
+    Uses an else clause with a while loop.
+
+    e.g.
+    2 is prime
+    3 is prime
+    4 is 2 * 2
+    5 is prime
+    6 is 2 * 3
+    7 is prime
+    8 is 2 * 4
+    9 is 3 * 3
+    """
+
+    num = 2
+    while num < 10:
+        div = 2
+        while div < num:
+            if num % div is 0:
+                print(num, 'is ', div, '*', num // div)
                 break
-            else:
-                dividing_num += 1
+            div = div + 1
+
         else:
-            dividing_num = 2
-            print(i, 'is prime')
-        i += 1
-        
-finding_prime()
-    
+            print(num, 'is prime')
+
+        num = num + 1
+
+
+finding_prime_while()

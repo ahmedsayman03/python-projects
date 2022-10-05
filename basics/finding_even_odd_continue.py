@@ -5,6 +5,7 @@ def finding_even_odd_continue():
     for i in range (1, 10):
         if i % 2 == 0:
             print(i, 'Even')
+            #  Breaks out of for loop
             continue
 
         #  Could remove continue and replace with an else here
