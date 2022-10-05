@@ -1,41 +1,33 @@
-'''
-lambda is a small anonymous function. You can return a function object using
-lambda.
-lambda functions are single expression.
-
-they can take arguments and do stuff with it.
-'''
-
 def mult(n):
-    '''
-    This takes n and returns a function that multiples anything by n
+    """Returns a function that multiples int by n.
+
+    Lambda is a small anonymous function.
+    You can return a function object using lambda.
+    Lambda functions are single expressions.
+    They can take arguments and do stuff.
 
     e.g.
-    mult(2) is a function that multiples any given integer by 2
+    mult(2)
+        returns function that multiplies by 2.
 
-    mult(3) is a function that multiples any given integer by 3
-    '''
-    
-    # e.g. takes 2 when innit
-    return lambda i: i * n
-    # returns function that takes i
-    # does i * 2
+    mult(3)
+        returns function that multiples by 3.
+    """
 
-    # mult(2) returns a function that takes i and does i * 2
+    return lambda x: x*n
 
-'''
-Can also pass a small lambda function as an argument
-'''
+
 def new_sort(items):
-    '''
-    value of key is a function that takes a one argument and returns
-    a key used for sorting purposes
+    """Passes lambda function as an argument.
 
-    function runs on every list item
-    '''
-    # here, all items greater than two go at the end
+    Sorts items based on key: if they are greater than 2 or not.
 
-    # less than 2 at the start
-    items.sort(key = lambda i : i > 2)
-    
+    e.g.
+    new_sort([4,3,2,1,6,8])
+        returns [2, 1, 4, 3, 6, 8]
+    """
 
+    #  Value of key is a function that takes one argument and returns a key used for sorting items in items.
+    #  All items greater than 2 go at the end.
+    items.sort(key=lambda x: x > 2)
+    print(items)
