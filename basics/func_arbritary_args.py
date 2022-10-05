@@ -1,34 +1,68 @@
+def arb_args(first, *arguments):
+    """Takes multiple arguments.
 
-def cheeseshop(kind, *arguments):
-    print("-- Do you have any", kind, "?")
-    print("-- I'm sorry, we're all out of", kind)
+    e.g.
+    arb_args(1, 2, 3, 4)
+
+    arb_args(1, 2, '3', '4')
+        Can be strings or ints
+
+    arb_args(1, 2, 3, first=4)
+        Raises Error
+        TypeError: got multiple values for argument 'first'
+        Mandatory arguments have to come first, otherwise it will be as if you are giving multiple values for first
+        argument.
+
+    arb_args(first=1, 2, 3)
+        Raises Error
+        SyntaxError: positional argument follows keyword argument
+        The above is seen as a kwarg, and the positional first argument is 2. Positional argument = mandatory arguments.
+
+    Cannot take kwargs since **kwargs is not a parameter.
+    """
+
+    print(first)
+    print('-' * 40)
+
     for arg in arguments:
         print(arg)
-    print("-" * 40)
 
-'''
-above can take multiple arguments, like this:
 
-cheeseshop('blue', '1', '2', '3', '4')
+def arb_kwargs(first, *arguments, **kwargs):
+    """Takes multiple keyword arguments (dictionaries).
 
-this is what *name does, it takes any number of arguments
+    e.g.
+    arb_kwargs(second=2, third=3, first=1)
 
-**name takes any number of kwargs, e.g.
+    arb_kwargs(1, second=2, third='3')
+        Type of parameters is string, but the value of them remains the same type.
+        2 is an int, 3 is a str.
 
-def cheeseshop(kind, *arguments, **keywords):
-    print("-- Do you have any", kind, "?")
-    print("-- I'm sorry, we're all out of", kind)
+        e.g. For second
+        type(kw) -> String #  second
+        type(kwargs[kw]) -> int #  2
+
+    arb_kwargs(second=2, 1)
+        Raises Error
+        kwargs always come after positional arguments.
+    """
+    print(first)
+    print('-' * 40)
+
     for arg in arguments:
         print(arg)
-    print("-" * 40)
-    for kw in keywords:
-        print(kw, ":", keywords[kw])
-'''
 
-# this takes arbitrary args, with a kwarg at the end
+    print('-' * 40)
+
+    for kw in kwargs:
+        print(kw, ':', kwargs[kw])
+
+
 def test_sep(*args, sep='/'):
-    print(sep.join(args))
-    
+    """Takes arbitrary args and separates them with the kwarg at the end."""
 
-test_sep('testing', 'again')
-# prints testing/again
+    #  args has to be strings since join only takes strings
+    print(sep.join(args))
+
+
+
