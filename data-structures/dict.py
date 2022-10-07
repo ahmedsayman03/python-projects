@@ -39,6 +39,7 @@ def dict():
     # Sorts d
     print(sorted(d))
 
+    # Use in to see if key is in dictionary or not
     print('a' in d)
     print(1 in d)
 
