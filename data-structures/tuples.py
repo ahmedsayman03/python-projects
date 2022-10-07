@@ -42,4 +42,6 @@ def tuple_packing():
 
     # LHS variables == number of elements in sequence
 
+    # Note that multiple assignment is really just a combination of tuple packing and sequence unpacking.
+
 
