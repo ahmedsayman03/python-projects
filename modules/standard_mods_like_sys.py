@@ -21,4 +21,3 @@ def std_mods():
     # Can be changed like so:
     # import sys
     # sys.path.append('/a/b/c')
-    
