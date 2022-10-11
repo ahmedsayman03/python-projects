@@ -15,4 +15,7 @@ def scripts():
     # Now, if I just import it like so
     # import fibo
     # The code above will not run since importing a module does not make __name__ = __main__
+
+    # Module now has a nice User Interface
+    # Good for testing too, as running module as script runs test suite
     pass
