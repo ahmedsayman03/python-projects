@@ -8,7 +8,7 @@ def packages():
     # Another module has variables
     # mod.var
     # anothermod.var
-    # Dot notation good because not modules don't have to worry about another modules variable names.
+    # Dot notation good because now modules don't have to worry about another modules variable names.
 
     # Similarly
     # Multi-module packages don't have to worry about other package's module names.
@@ -53,7 +53,7 @@ def packages():
 
     # Note:
     # from package import item
-    # This syntax imports names in package, if not it tries to load the module
+    # This syntax imports names (item) in package, if not it tries to load the module
 
     # i.e.
     # searches package for name item (function, variable, class etc.)
