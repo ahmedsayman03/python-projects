@@ -8,4 +8,3 @@ def search_path():
     # sys.path is initialized in cwd or the input script directory (script being run)
     # OR
     # PYTHONPATH
-    
