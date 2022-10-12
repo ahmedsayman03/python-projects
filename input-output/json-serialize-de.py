@@ -19,7 +19,7 @@ def json():
     # x = json.load(f)
     # f is a text-file object
 
-    
+
 
 json()
 
