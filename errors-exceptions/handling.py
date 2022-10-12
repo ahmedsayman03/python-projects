@@ -22,6 +22,8 @@ def handling():
 
 
 def exception_args():
+    """Exceptions have arguments for clarity. You can access them by printing the exception or doing Exception.args"""
+
     try:
         raise Exception('spam', 'eggs')
     except Exception as inst:
@@ -38,10 +40,12 @@ def exception_args():
 
 
 def my_er():
+    """An error (cannot divide by 0). Used to demonstrate that try errors if the function it calls raises an error."""
     x = 1/0
 
 
 def my_er_f():
+    """Calls a function that raises an error. The except clause in this function catches it."""
     try:
         my_er()
     except ZeroDivisionError:
