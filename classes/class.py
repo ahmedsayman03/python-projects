@@ -20,7 +20,12 @@ class MyClass:
         """self is the instance object. obj.f is same as MyClass.f(obj)
 
         Calling f method with arguments is = calling f with obj inserted as first argument"""
-        return 'hello world'
+        print('hello world')
+
+    def f_twice(self):
+        """Calls another function in the class using self."""
+        self.f()
+        self.f()
 
     # obj.i
     # obj.f  # a function object
@@ -42,7 +47,8 @@ print(mc.test)
 
 # method belongs to obj
 # class function objs are methods for instance obj
-mc.f  # method object, not a function objection
+mc.f()  # method object, not a function objection
+mc.f_twice()
 
 # Classes (function objects)
 # instances (method objects)
