@@ -16,4 +16,3 @@ class A(B, C, D):
     Dynamic ordering solves this problem and doesn't repeat checking a same class that is a parent of multiple
     inherited classes.
     """
-    
