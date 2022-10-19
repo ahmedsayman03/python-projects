@@ -63,4 +63,31 @@ def insert(ar, item, ind):
     print(new)
 
 
-insert([1, 3, 5, 7, 9], 0, 3)
+def delete(ar, ind):
+    """Delete item at index ind in array ar."""
+    # New array will be 1 item less than original (after deletion)
+    size = len(ar) - 1
+    new = [0 for item in range(size)]
+
+    i = 0
+
+    space = 0
+
+    # size + 1 because new array is 1 smaller than original, but we want to loop through original
+    while i < size + 1:
+        if i != ind:
+            # put array item into new item
+            new[i - space] = ar[i]
+
+        else:
+            # Remove
+
+            # From now on, place item in position x in array into position x-1 in new array (handles deleted item)
+            space = 1
+
+        i = i + 1
+
+    print(new)
+
+
+delete([1, 3, 5, 7, 9], 3)
