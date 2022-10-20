@@ -90,4 +90,17 @@ def delete(ar, ind):
     print(new)
 
 
-delete([1, 3, 5, 7, 9], 3)
+def search(ar, item):
+    """Searches array for a given item."""
+    found = False
+    for index, i in enumerate(ar):
+        if i == item:
+            print('Found item {} at position {}'.format(item, index))
+            found = True
+            break
+
+    if not found:
+        print('Item not in array')
+
+
+search([1, 3, 5, 7, 9], 4)
