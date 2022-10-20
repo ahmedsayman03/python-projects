@@ -103,4 +103,15 @@ def search(ar, item):
         print('Item not in array')
 
 
-search([1, 3, 5, 7, 9], 4)
+def update(ar, index, item):
+    """Update an item in an array at a given position."""
+    print('Array before update:')
+    print(ar)
+
+    ar[index] = item
+
+    print('Array after update:')
+    print(ar)
+
+
+update([1, 3, 5, 7, 9], 3, 55)
