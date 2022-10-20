@@ -8,6 +8,18 @@ class Schools:
         """Defines for loop. Returns next item. if __next__ defined, return self."""
         return self
 
+    # The below code works for iter without next (basically, yield what is next)
+    # Taken from linked lists implementation in different tutorial.
+    # def __iter__(self):
+    #     # Remember, self is our UnorderedList.
+    #     # In order to get to the first Node, we must do
+    #     current = self.head
+    #     # and then, until we have reached the end:
+    #     while current is not None:
+    #         yield current
+    #         # in order to get from one Node to the next one:
+    #         current = current.next
+
     def __next__(self):
         """Return next item. If 0, raise StopIteration."""
         if self.index == 0:
