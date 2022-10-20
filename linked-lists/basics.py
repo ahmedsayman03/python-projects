@@ -49,6 +49,28 @@ class LinkedListFirst:
         # Link new head node to previous head node
         node.next_node = link_node
 
+    def delete_node(self):
+        """Deletes beginning node."""
+        # Make beginning node data be the second node's data
+        self.data = self.next_node.data
+        # Make beginning node's next be the second node's next
+        self.next_node = self.next_node.next_node
+
+    def search(self, element):
+        """Searches Linked List for element."""
+        found = False
+        ind = 0
+        for index, i in enumerate(self):
+            if i.data == element:
+                found = True
+                ind = index
+                break
+
+        if found:
+            print(found, 'is at position', ind)
+        else:
+            print('Not in list')
+
     def __str__(self):
         l = []
         curr_node = self
@@ -72,7 +94,7 @@ class Node:
         self.next_node = next_node
 
 
-a = Node(1, None)
+a = Node(1)
 b = Node(2, a)
 c = Node(3, b)
 d = Node(4, c)
@@ -82,5 +104,7 @@ h = LinkedListFirst(999)
 f.insert(h)
 print(h)
 
-for i in h:
-    print(i.data)
+h.delete_node()
+print(h)
+
+h.search(5)
