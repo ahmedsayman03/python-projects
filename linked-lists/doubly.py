@@ -14,6 +14,9 @@ class DoublyLinkedList:
     def insert(self, node):
         """Inserts node into the start of the list."""
         node.next = self.head
+        if self.head:
+            self.head.prev = node
+
         self.head = node
         node.prev = None
 
@@ -22,6 +25,7 @@ class DoublyLinkedList:
         old_head = self.head
         new_head = self.head.next
         self.head = new_head
+        new_head.prev = None
         old_head.next = None
 
     def insert_last(self, node):
@@ -32,6 +36,7 @@ class DoublyLinkedList:
 
         else:
             current.next = node
+            node.prev = current
             node.next = None
 
     def display(self):
@@ -41,6 +46,7 @@ class DoublyLinkedList:
         while current:
             print(current.data, end='->')
             current = current.next
+        print('\n')
 
 
 a = Node(1)
@@ -58,4 +64,7 @@ ll.display()
 last = Node(999)
 ll.insert_last(last)
 
+ll.display()
+
+ll.delete()
 ll.display()
