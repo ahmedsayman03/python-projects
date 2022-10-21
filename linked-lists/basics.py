@@ -111,7 +111,8 @@ class LinkedListFirst:
         c.next_node = t
 
         while n is not None:
-            # Step through
+            # Step through, c kind of resembles "prev" here
+            # Could have been more clear if i initialized prev, current and next right at start
             nn = n.next_node
             n.next_node = c
             c = n
