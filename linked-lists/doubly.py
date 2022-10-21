@@ -66,6 +66,24 @@ class DoublyLinkedList:
         node.next = n
         n.prev = node
 
+    def delete_index(self, index):
+        """Deletes node at a given index."""
+        ind = 0
+        current = self.head
+
+        while ind is not index:
+            current = current.next
+            ind = ind + 1
+
+        # Want to delete current node
+        # Update nodes before and after current to point to each other
+        current.prev.next = current.next
+        current.next.prev = current.prev
+
+        # Unlink current
+        current.next = None
+        current.prev = None
+
     def display(self):
         """Prints linked list using the data of each element."""
         print('Head', end='->')
@@ -95,4 +113,6 @@ ll.display()
 
 n = Node(50)
 ll.insert_after(n, 1)
+ll.display()
+ll.delete_index(2)
 ll.display()
