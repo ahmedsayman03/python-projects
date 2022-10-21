@@ -24,6 +24,16 @@ class DoublyLinkedList:
         self.head = new_head
         old_head.next = None
 
+    def insert_last(self, node):
+        """Adds node to the last part of the list."""
+        current = self.head
+        while current.next:
+            current = current.next
+
+        else:
+            current.next = node
+            node.next = None
+
     def display(self):
         """Prints linked list using the data of each element."""
         print('Head', end='->')
@@ -43,4 +53,9 @@ ll.insert(a)
 ll.insert(b)
 ll.insert(c)
 ll.insert(d)
+ll.display()
+
+last = Node(999)
+ll.insert_last(last)
+
 ll.display()
