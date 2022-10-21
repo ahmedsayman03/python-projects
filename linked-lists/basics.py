@@ -121,7 +121,6 @@ class LinkedListFirst:
 
         print(h)
 
-
     def __str__(self):
         l = []
         curr_node = self
