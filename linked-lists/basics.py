@@ -71,6 +71,34 @@ class LinkedListFirst:
         else:
             print('Not in list')
 
+    def delete_key(self, element):
+        """Delete item from linked list given specific data."""
+        current = self
+        prev = current
+
+        original = current
+        print(original)
+
+        # This function is only called from the head node
+        # Below is the case when the head node is to be deleted
+        if current.data == element:
+            self.delete_node()
+
+        # If it's not head node being deleted, we need to store previous node
+        else:
+            while current:
+                if current.data == element:
+                    # Link previous node to next code, remove middle (current) node
+                    prev.next_node = current.next_node
+                    current.next_node = None
+                    break
+                else:
+                    # Store previous node, move through list
+                    prev = current
+                    current = current.next_node
+
+        print(original)
+
     def __str__(self):
         l = []
         curr_node = self
@@ -99,12 +127,7 @@ b = Node(2, a)
 c = Node(3, b)
 d = Node(4, c)
 f = LinkedListFirst(0, d)
-print(f)
 h = LinkedListFirst(999)
 f.insert(h)
-print(h)
 
-h.delete_node()
-print(h)
-
-h.search(5)
+h.delete_key(55)
