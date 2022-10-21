@@ -99,6 +99,29 @@ class LinkedListFirst:
 
         print(original)
 
+    def reverse(self):
+        """Reverses the Linked List."""
+        print(self)
+        # Head case
+        # Make new node as tail
+        t = Node(self.data, None)
+        # Store next node, and the node after. Then make next node point to tail
+        c = self.next_node
+        n = self.next_node.next_node
+        c.next_node = t
+
+        while n is not None:
+            # Step through
+            nn = n.next_node
+            n.next_node = c
+            c = n
+            n = nn
+            if n is None:
+                h = LinkedListFirst(c.data, c.next_node)
+
+        print(h)
+
+
     def __str__(self):
         l = []
         curr_node = self
@@ -130,4 +153,4 @@ f = LinkedListFirst(0, d)
 h = LinkedListFirst(999)
 f.insert(h)
 
-h.delete_key(55)
+h.reverse()
