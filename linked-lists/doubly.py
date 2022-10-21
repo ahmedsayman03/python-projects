@@ -39,6 +39,16 @@ class DoublyLinkedList:
             node.prev = current
             node.next = None
 
+    def delete_last(self):
+        """Deletes last node in the linked list."""
+        current = self.head
+        while current.next is not None:
+            current = current.next
+        # Current node has no next, therefore it is the last note
+        # Unlink current from previous node
+        current.prev.next = None
+        current.prev = None
+
     def display(self):
         """Prints linked list using the data of each element."""
         print('Head', end='->')
@@ -67,4 +77,8 @@ ll.insert_last(last)
 ll.display()
 
 ll.delete()
+ll.display()
+
+
+ll.delete_last()
 ll.display()
