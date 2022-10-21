@@ -49,6 +49,23 @@ class DoublyLinkedList:
         current.prev.next = None
         current.prev = None
 
+    def insert_after(self, node, index):
+        """Inserts node after a given index."""
+        ind = 0
+        current = self.head
+        # Traverse list until given index is reached
+        while ind is not index:
+            current = current.next
+            ind = ind + 1
+
+        # Want to insert after current node
+        # Want to update the next node's prev attribute to point to new node now too
+        n = current.next
+        current.next = node
+        node.prev = current
+        node.next = n
+        n.prev = node
+
     def display(self):
         """Prints linked list using the data of each element."""
         print('Head', end='->')
@@ -76,9 +93,6 @@ ll.insert_last(last)
 
 ll.display()
 
-ll.delete()
-ll.display()
-
-
-ll.delete_last()
+n = Node(50)
+ll.insert_after(n, 1)
 ll.display()
