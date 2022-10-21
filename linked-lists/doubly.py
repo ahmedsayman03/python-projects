@@ -93,6 +93,21 @@ class DoublyLinkedList:
             current = current.next
         print('\n')
 
+    def display_backward(self):
+        """Prints list in backwards order."""
+        # This will be more efficient if the Linked List has a 'last' node that points to the last node
+        current = self.head
+        while current.next:
+            # Go to last node
+            current = current.next
+
+        # current is the last node now
+        print('Tail', end='->')
+        while current.prev:
+            print(current.data, end='->')
+            current = current.prev
+        print(current.data)
+
 
 a = Node(1)
 b = Node(2)
@@ -114,5 +129,4 @@ ll.display()
 n = Node(50)
 ll.insert_after(n, 1)
 ll.display()
-ll.delete_index(2)
-ll.display()
+ll.display_backward()
